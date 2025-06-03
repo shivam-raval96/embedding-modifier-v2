@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "npm run build && gh-pages -d out -t true"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "d3": "^7.9.0",
@@ -16,14 +17,11 @@
     "next": "^15.3.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "three": "^0.176.0",
     "umap-js": "^1.4.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.8",
-    "autoprefixer": "^10.4.21",
+    "@tailwindcss/postcss": "^4",
     "gh-pages": "^6.3.0",
-    "postcss": "^8.5.4",
-    "tailwindcss": "^4.1.8"
+    "tailwindcss": "^4"
   }
 }
