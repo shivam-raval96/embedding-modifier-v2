@@ -1,6 +1,6 @@
 const DATASETS = {
-  data1: () => loadJSONDataset("/data/data1.json"),
-  data2: () => loadJSONDataset("/data/data2.json"),
+  data1: () => loadJSONDataset("./data/data1.json"),
+  data2: () => loadJSONDataset("./data/data2.json"),
 };
 
 export async function loadDataset(datasetId) {
