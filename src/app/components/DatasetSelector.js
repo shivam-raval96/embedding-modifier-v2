@@ -16,6 +16,11 @@ export default function DatasetSelector({
       name: "Eng-Fr texts test",
       description: "Some synthetic data2.",
     },
+    {
+      id: "data_mit",
+      name: "Media lab",
+      description: "Media lab project descriptions",
+    },
   ];
 
   return (

@@ -99,6 +99,26 @@ function ControlPanel({
                 <span>Reduce emphasis</span>
               </div>
             </div>
+
+            <div>
+              <label className="block text-sm font-medium text-slate-300 mb-2">
+                Bio: {config.bioAdjustment}
+              </label>
+              <input
+                type="range"
+                min="-2"
+                max="2"
+                step="0.1"
+                value={config.bioAdjustment}
+                onChange={(e) => handleChange("bioAdjustment", e.target.value)}
+                disabled={isProcessing}
+                className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider"
+              />
+              <div className="flex justify-between text-xs text-slate-400 mt-1">
+                <span>Increase emphasis</span>
+                <span>Reduce emphasis</span>
+              </div>
+            </div>
           </div>
         </div>
 

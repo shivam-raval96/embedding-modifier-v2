@@ -14,13 +14,14 @@ export default function EmbeddingVisualizer() {
   const [availableAttributes, setAvailableAttributes] = useState([]);
   const [selectedPoints, setSelectedPoints] = useState([]);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [selectedDataset, setSelectedDataset] = useState("data1");
+  const [selectedDataset, setSelectedDataset] = useState("data_mit");
   const [config, setConfig] = useState({
     umapNeighbors: 15,
     umapMinDist: 0.1,
     colorAttribute: null,
     languageAdjustment: 0,
     sentimentAdjustment: 0,
+    bioAdjustment: 0,
   });
 
   const onConfigChange = (changes) => {
@@ -32,7 +33,7 @@ export default function EmbeddingVisualizer() {
 
   useEffect(() => {
     // Load default dataset on mount
-    loadSelectedDataset("data1");
+    loadSelectedDataset("data_mit");
   }, []);
 
   useEffect(() => {
@@ -45,6 +46,7 @@ export default function EmbeddingVisualizer() {
     config.umapMinDist,
     config.languageAdjustment,
     config.sentimentAdjustment,
+    config.bioAdjustment,
   ]);
 
   const processData = async () => {

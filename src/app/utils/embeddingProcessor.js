@@ -149,6 +149,21 @@ async function adjustEmbeddings(embeddings, config) {
     }
   }
 
+  // Load and apply o adjustment
+  if (config.bioAdjustment !== 0) {
+    const bioVector = await loadVector("data/bio_vector.json");
+    if (bioVector) {
+      console.log("test");
+      adjustedEmbeddings = projectOutDirection(
+        adjustedEmbeddings,
+        bioVector,
+        config.bioAdjustment
+      );
+    } else {
+      console.warn("Biovector not found, skipping language adjustment");
+    }
+  }
+
   return adjustedEmbeddings;
 }
 
